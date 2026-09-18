@@ -1,11 +1,10 @@
-from fastapi import FastAPI,status,HTTPException
+from fastapi import FastAPI
 from app.api.task_api import router as task_router
-from app.core.database import engine, Base
+
 #create Fastapi app
 
 app = FastAPI()
 
-Base.metadata.create_all(bind=engine)
 
 
 #Home route Responce
