@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 
 from app.core.database import Base
 from app.models.tasks_model import Task
+from app.models.user_model import User
 config = context.config
 
 

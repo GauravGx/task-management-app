@@ -1,5 +1,7 @@
-from sqlalchemy import Column, Integer, String, Boolean
+from sqlalchemy import Column, Integer, String, Boolean,ForeignKey
 from app.core.database import Base
+from sqlalchemy.orm import relationship
+
 
 
 
@@ -13,5 +15,10 @@ class Task(Base):
     title =Column(String(100),nullable=False)
     description = Column(String(500),nullable=False)
     is_completed = Column(Boolean,default=False)
+    user_id  = Column(Integer,ForeignKey("users.id"),nullable=False)
+    user = relationship(
+        "User",
+        back_populates="tasks"
+    )
 
 
